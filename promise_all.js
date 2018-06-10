@@ -5,11 +5,11 @@ const readFileAsync = util.promisify(fs.readFile);
 
 
 var hoge = readFileAsync("hoge.txt")
-var piyo = readFileAsync("piyo.txt")
-var nyan = readFileAsync("nyan.txt")
-var myon = readFileAsync("myon.txt")
+var fuga = readFileAsync("fuga.txt")
+var foo = readFileAsync("foo.txt")
+var bar = readFileAsync("bar.txt")
 
-Promise.all([hoge, piyo, nyan, myon])
+Promise.all([hoge, fuga, foo, bar])
     .then(
         (values) => { console.log(values[0] + values[1] + values[2] + values[3]) }
     )

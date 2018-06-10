@@ -3,24 +3,24 @@ const util = require('util')
 
 const readFileAsync = util.promisify(fs.readFile)
 
-var hoge, piyo, nyan, myon
+var hoge, fuga, foo, bar
 
 readFileAsync("hoge.txt")
     .then(
         (result) => { 
             hoge = result
-            return readFileAsync("piyo.txt") }
+            return readFileAsync("fuga.txt") }
     ).then(
         (result) => {
-            piyo = result 
-            return readFileAsync("nyan.txt") }
+            fuga = result 
+            return readFileAsync("foo.txt") }
     ).then(
         (result) => {
-            nyan = result
-            return readFileAsync("myon.txt") }
+            foo = result
+            return readFileAsync("bar.txt") }
     )
     .then(
         (result) => { 
-            myon = result
-            console.log(hoge + piyo + nyan + myon) }
+            bar = result
+            console.log(hoge + fuga + foo + bar) }
     )
